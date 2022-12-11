@@ -17,27 +17,29 @@ Output: 15
 */
 
 function totalScore(arr) {
-   
- const evenPoints = 1;
- const oddPoints = 3;
- const has5Points = 5;
- var totalScore = 0;
 
- var flag=false;
+    const evenPoints = 1;
+    const oddPoints = 3;
+    const has5Points = 5;
+    var totalScore = 0;
+    var flag=false;
 
- arr.forEach(element => {
-    if(element === 5){
-        totalScore += has5Points;
-        flag=true;
-    }
-    if(element % 2 !== 0 && flag === false){
-        totalScore += oddPoints;
-    }
-    if(element % 2 === 0 ){
-        totalScore += evenPoints;
-    }
-    flag = false;
- });
+    arr.forEach(element => {
+        if(element === 5){
+            totalScore += has5Points;
+            flag=true;
+        }
+
+        if(element % 2 !== 0 && flag === false){
+            totalScore += oddPoints;
+        }
+
+        if(element % 2 === 0 ){
+            totalScore += evenPoints;
+        }
+
+        flag = false;
+    });
 
     return totalScore; 
 }

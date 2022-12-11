@@ -15,22 +15,22 @@ tribonacci([1, 2, 3], 2) // should == [1, 2]
 */
 
 function tribonacci(arr,length) {
-   var tribonacciResult =null;
+    var tribonacciResult =null;
 
-   if (length == 0) return 0;
+    if (length == 0) return 0;
 
-   if(length <= 3){
-    tribonacciResult = arr.slice(0,length);
-    return tribonacciResult;
-   }
+    if(length <= 3){
+        tribonacciResult = arr.slice(0,length);
+        return tribonacciResult;
+    }
 
-   tribonacciResult=arr.slice(0,3);
+    tribonacciResult=arr.slice(0,3);
 
-   for(let i = 3; i < length; i++){
+    for(let i = 3; i < length; i++){
         tribonacciResult.push( tribonacciResult[i-3]+tribonacciResult[i-2]+tribonacciResult[i-1]);
         //can use splice instead of push
-       //tribonacciResult.splice(i,0, tribonacciResult[i-3]+tribonacciResult[i-2]+tribonacciResult[i-1]);
-   }
+        //tribonacciResult.splice(i,0, tribonacciResult[i-3]+tribonacciResult[i-2]+tribonacciResult[i-1]);
+    }
 
     return tribonacciResult; 
 }
